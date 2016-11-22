@@ -1,13 +1,17 @@
 {
-    "name": "princealikhan/paytm-payment",
+    "name": "trocho/laravel-paytm",
     "description": "Payment Integration with Paytm.",
     "license": "MIT",
-    "keywords": ["paytm", "laravel","payment","gateway","india"],
+    "keywords": ["paytm", "laravel","payment","gateway"],
     "support": {
-        "issues": "https://github.com/princealikhan/paytm-payment/issues",
-        "source": "https://github.com/princealikhan/paytm-payment"
+        "issues": "https://github.com/trocho/laravel-paytm/issues",
+        "source": "https://github.com/trocho/laravel-paytm"
     },
     "authors": [
+        {
+            "name": "Patryk Trochowski",
+            "email": "patryk.trocho@gmail.com"
+        },
         {
             "name": "Prince Ali Khan",
             "email": "princealikhan08@gmail.com"
@@ -16,12 +20,12 @@
     "minimum-stability": "dev",
     "require": {
             "php": ">=5.5.9",
-            "illuminate/contracts": "5.0.*|5.1.*|5.2.*|5.3.*",
-            "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*"
+            "illuminate/contracts": "4.2.*|5.0.*|5.1.*|5.2.*|5.3.*",
+            "illuminate/support": "4.2.*|5.0.*|5.1.*|5.2.*|5.3.*"
         },
     "autoload": {
         "psr-4": {
-            "Princealikhan\\PaytmPayment\\": "src/"
+            "Trocho\\LaravelPaytm\\": "src/"
         }
     }    
 }
