@@ -1,4 +1,5 @@
 <?php namespace Princealikhan\PaytmPayment\Exceptions;
+
 /**
  * Invalid Request Exception
  *
@@ -6,5 +7,5 @@
  */
 class PaytmException extends \Exception
 {
-	
+
 }

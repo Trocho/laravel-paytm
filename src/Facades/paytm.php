@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Facade;
 
-class Paytm extends Facade {
+class Paytm extends Facade
+{
 
-    protected static function getFacadeAccessor() 
+    protected static function getFacadeAccessor()
     {
-    	return 'paytm'; 
- 	}
+        return 'paytm';
+    }
 }
