@@ -1,4 +1,4 @@
-<?php namespace Princealikhan\PaytmPayment\Facades;
+<?php namespace Trocho\LaravelPaytm\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

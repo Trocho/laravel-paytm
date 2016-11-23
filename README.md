@@ -8,7 +8,7 @@ It simplifies the payment flow with the defined methods. You can pay through pay
 
 First, you'll need to require the package with Composer:
 ```sh
-composer require princealikhan/paytm-payment
+composer require trocho/laravel-paytm
 ```
 Aftwards, run `composer update` from your command line.
 
@@ -17,7 +17,7 @@ Then, update `config/app.php` by adding an entry for the service provider.
 ```php
 'providers' => [
 	// ...
-	'Princealikhan\PaytmPayment\PaytmServiceProvider',
+	'Trocho\LaravelPaytm\PaytmServiceProvider',
 ];
 ```
 
@@ -27,7 +27,7 @@ Then, register class alias by adding an entry in aliases section
 ```php
 'aliases' => [
 	// ...
-	'Paytm' => 'Princealikhan\PaytmPayment\Facades\Paytm',
+	'Paytm' => 'Trocho\LaravelPaytm\Facades\Paytm',
 ];
 ```
 
