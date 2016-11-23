@@ -36,24 +36,24 @@ class Paytm extends PaytmFactory
     /**
      * Generate the list of attributes necessary to the integration via form
      *
-     * @param $requestParamList
+     * @param $parameters
      * @return array
      */
-    public function pay($requestParamList)
+    public function pay(array $parameters)
     {
-        $parameters = [
+        $parameters = array_merge([
             'MID' => $this->merchantMid,
             'ORDER_ID' => parent::orderID($this->orderPrefix),
             'INDUSTRY_TYPE_ID' => $this->industry,
             'CHANNEL_ID' => $this->channel,
             'WEBSITE' => $this->website,
             'CALLBACK_URL' => $this->callback,
-        ];
+        ], $parameters);
 
         return [
             'url' => $this->txnUrl,
             'parameters' => $parameters,
-            'token' => parent::getChecksumFromArray($requestParamList, $this->merchantKey),
+            'token' => parent::getChecksumFromArray($parameters, $this->merchantKey),
         ];
     }
 
