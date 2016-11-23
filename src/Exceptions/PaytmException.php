@@ -1,4 +1,4 @@
-<?php namespace Princealikhan\PaytmPayment\Exceptions;
+<?php namespace Trocho\LaravelPaytm\Exceptions;
 
 /**
  * Invalid Request Exception

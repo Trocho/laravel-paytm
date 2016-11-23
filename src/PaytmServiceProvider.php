@@ -1,4 +1,4 @@
-<?php namespace Princealikhan\PaytmPayment;
+<?php namespace Trocho\LaravelPaytm;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,4 +1,4 @@
-<?php namespace Princealikhan\PaytmPayment;
+<?php namespace Trocho\LaravelPaytm;
 
 use Princealikhan\PaytmPayment\Factories\PaytmFactory;
 use Illuminate\Support\Facades\Config;
