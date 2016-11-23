@@ -15,7 +15,6 @@ class PaytmServiceProvider extends ServiceProvider
         // Publish Configuration File to base Path.
         $this->publishes([
             __DIR__ . '/config/config.php' => base_path('config/paytm.php'),
-            __DIR__ . '/view/paytm-payment/redirect.php' => base_path('resources/views/vendor/paytm-payment/redirect.php'),
         ]);
     }
 
@@ -26,10 +25,6 @@ class PaytmServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
-        $this->app->bind('paytm', function () {
-            return new Paytm;
-        });
+        $this->app->bind('paytm', Paytm::class);
     }
-
 }
