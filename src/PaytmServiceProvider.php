@@ -4,7 +4,6 @@ use Illuminate\Support\ServiceProvider;
 
 class PaytmServiceProvider extends ServiceProvider
 {
-
     /**
      * Bootstrap the application services.
      *
@@ -12,10 +11,7 @@ class PaytmServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Publish Configuration File to base Path.
-        $this->publishes([
-            __DIR__ . '/config/config.php' => base_path('config/paytm.php'),
-        ]);
+        $this->package('trocho/laravel-paytm', 'laravel-paytm', __DIR__);
     }
 
     /**
@@ -25,6 +21,6 @@ class PaytmServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('paytm', Paytm::class);
+        $this->app->bind(Paytm::class);
     }
 }
