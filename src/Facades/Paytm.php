@@ -7,6 +7,6 @@ class Paytm extends Facade
 
     protected static function getFacadeAccessor()
     {
-        return 'paytm';
+        return \Trocho\LaravelPaytm\Paytm::class;
     }
 }
