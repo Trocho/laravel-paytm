@@ -32,9 +32,8 @@ class PaytmFactory
         return $responseParamList;
     }
 
-    protected function encrypt_e($input, $ky)
+    protected function encrypt_e($input, $key)
     {
-        $key = $ky;
         $size = mcrypt_get_block_size(MCRYPT_RIJNDAEL_128, 'cbc');
         $input = self::pkcs5_pad_e($input, $size);
         $td = mcrypt_module_open(MCRYPT_RIJNDAEL_128, '', 'cbc', '');
@@ -47,11 +46,9 @@ class PaytmFactory
         return $data;
     }
 
-    protected function decrypt_e($crypt, $ky)
+    protected function decrypt_e($crypt, $key)
     {
-
         $crypt = base64_decode($crypt);
-        $key = $ky;
         $td = mcrypt_module_open(MCRYPT_RIJNDAEL_128, '', 'cbc', '');
         $iv = "@@@@&&&&####$$$$";
         mcrypt_generic_init($td, $key, $iv);
@@ -165,7 +162,7 @@ class PaytmFactory
 
     protected function redirect2PG($paramList, $key)
     {
-        $hashString = self::getchecksumFromArray($paramList);
+        $hashString = self::getchecksumFromArray($paramList, $key);
         $checksum = self::encrypt_e($hashString, $key);
     }
 
