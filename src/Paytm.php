@@ -24,13 +24,13 @@ class Paytm extends PaytmFactory
             $this->txnUrl = 'https://secure.paytm.in/oltp-web/processTransaction';
         }
 
-        $this->orderPrefix = data_get($config, 'paytm.order_prefix');
-        $this->callback = data_get($config, 'paytm.callback_url');
-        $this->channel = data_get($config, 'paytm.channel');
-        $this->industry = data_get($config, 'paytm.industry_type');
-        $this->website = data_get($config, 'paytm.website');
-        $this->merchantKey = data_get($config, 'paytm.connections.' . $env . '.merchant_key');
-        $this->merchantMid = data_get($config, 'paytm.connections.' . $env . '.merchant_mid');
+        $this->orderPrefix = data_get($config, 'order_prefix');
+        $this->callback = data_get($config, 'callback_url');
+        $this->channel = data_get($config, 'channel');
+        $this->industry = data_get($config, 'industry_type');
+        $this->website = data_get($config, 'website');
+        $this->merchantKey = data_get($config, 'connections.' . $env . '.merchant_key');
+        $this->merchantMid = data_get($config, 'connections.' . $env . '.merchant_mid');
     }
 
     /**
