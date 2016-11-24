@@ -1,7 +1,7 @@
 <?php namespace Trocho\LaravelPaytm;
 
-use Princealikhan\PaytmPayment\Factories\PaytmFactory;
 use Illuminate\Support\Facades\Config;
+use Trocho\LaravelPaytm\Factories\PaytmFactory;
 
 class Paytm extends PaytmFactory
 {
