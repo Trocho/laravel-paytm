@@ -10,7 +10,7 @@ class Paytm extends PaytmFactory
     {
         $config = Config::get('laravel-paytm::config');
 
-        $env = data_get('default');
+        $env = data_get($config, 'default');
 
         if ($env == 'sandbox') {
             $this->refund = 'https://pguat.paytm.com/oltp/HANDLER_INTERNAL/REFUND';
@@ -24,13 +24,13 @@ class Paytm extends PaytmFactory
             $this->txnUrl = 'https://secure.paytm.in/oltp-web/processTransaction';
         }
 
-        $this->orderPrefix = data_get('paytm.order_prefix');
-        $this->callback = data_get('paytm.callback_url');
-        $this->channel = data_get('paytm.channel');
-        $this->industry = data_get('paytm.industry_type');
-        $this->website = data_get('paytm.website');
-        $this->merchantKey = data_get('paytm.connections.' . $env . '.merchant_key');
-        $this->merchantMid = data_get('paytm.connections.' . $env . '.merchant_mid');
+        $this->orderPrefix = data_get($config, 'paytm.order_prefix');
+        $this->callback = data_get($config, 'paytm.callback_url');
+        $this->channel = data_get($config, 'paytm.channel');
+        $this->industry = data_get($config, 'paytm.industry_type');
+        $this->website = data_get($config, 'paytm.website');
+        $this->merchantKey = data_get($config, 'paytm.connections.' . $env . '.merchant_key');
+        $this->merchantMid = data_get($config, 'paytm.connections.' . $env . '.merchant_mid');
     }
 
     /**
